@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "/proto";
+
+message Request {
+    int32 value = 1;
+}
+
+message Response {
+    int32 result = 1;
+}
+
+service calculator {
+    rpc Add(stream Request) returns (Response){};
+}
+
+
